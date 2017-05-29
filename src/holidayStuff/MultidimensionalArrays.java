@@ -20,9 +20,19 @@ public class MultidimensionalArrays {
 	    	System.out.println("-----------");
 	}
 	}
+	public int getValueIndex(int index){
+			if(index < arraySize) return theArray[index];
+			return 0;
+	}
 public static void main(String[] args){
 	MultidimensionalArrays newArray = new MultidimensionalArrays();
 	newArray.generateRandomArray();
 	newArray.PrintArray();
+	System.out.println(newArray.getValueIndex(0));
+}
+@SuppressWarnings("unused")
+private void getValueAtIndex(int i) {
+	// TODO Auto-generated method stub
+	
 }
 }
