@@ -127,6 +127,21 @@ public class MultidimensionalArrays {
 		}
 	}
 	
+	public void insertionSort(){
+		for(int i = 1; i < arraySize; i++){
+			int j = i;
+			int toInsert = theArray[i];
+			while ((j > 0)&&(theArray[j-1] > toInsert)){
+				theArray[j] = theArray[j-1];
+				j--;
+				printHorzArray(i, j);
+			}
+			theArray[j] = toInsert;
+			System.out.println("\nArray[i]=" + theArray[i] +
+					"Array[j = " +  theArray[j] + "toInsert = " + toInsert);
+		}
+	}
+	
 public static void main(String[] args){
 	MultidimensionalArrays newArray = new MultidimensionalArrays();
 	newArray.generateRandomArray();
@@ -139,13 +154,13 @@ public static void main(String[] args){
 //	newArray.linearSeachForValue(12);
 //	newArray.bubbleSort();
 //	newArray.binarySearchForValue(30);
-    newArray.selectionSort();
-	
+ //   newArray.selectionSort();
+	newArray.insertionSort();
 }
 
 //@SuppressWarnings("unused")
 //private void getValueAtIndex(int i) {
-//	// TODO Auto-generated method stub
+//TODO Auto-generated method stub
 	
 }
 
