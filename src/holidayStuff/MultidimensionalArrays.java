@@ -112,20 +112,34 @@ public class MultidimensionalArrays {
 			printHorzArray(middleIndex, -1);
 		}
 	}
+// selectionSort
 	
+	public void selectionSort(){
+		for(int x = 0; x < arraySize; x++){
+			int minimum = x;
+			for(int y = x; y < arraySize; y++){
+				if(theArray[minimum] > theArray[y]){
+					minimum = y;
+				}
+			}
+			swapValues(x, minimum);
+			printHorzArray(x, -1);
+		}
+	}
 	
 public static void main(String[] args){
 	MultidimensionalArrays newArray = new MultidimensionalArrays();
 	newArray.generateRandomArray();
 	newArray.PrintArray();
-	System.out.println(newArray.getValueIndex(0));
-	System.out.println(newArray.doeasArrayContainThisValue(17));
-	newArray.deteIndex(2);
-	newArray.PrintArray();
-	newArray.insertValue(52);
-	newArray.linearSeachForValue(12);
-	newArray.bubbleSort();
-	newArray.binarySearchForValue(30);
+//	System.out.println(newArray.getValueIndex(0));
+//	System.out.println(newArray.doeasArrayContainThisValue(17));
+//	newArray.deteIndex(2);
+//	newArray.PrintArray();
+//	newArray.insertValue(52);
+//	newArray.linearSeachForValue(12);
+//	newArray.bubbleSort();
+//	newArray.binarySearchForValue(30);
+    newArray.selectionSort();
 	
 }
 
