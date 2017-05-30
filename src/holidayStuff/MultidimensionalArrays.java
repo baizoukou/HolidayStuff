@@ -42,6 +42,36 @@ public class MultidimensionalArrays {
 			arraySize--;
 		}
 	}
+	public void insertValue(int value){
+		if(arraySize < 50){
+			theArray[arraySize] = value;
+			arraySize ++;
+		}
+	}
+	// linear search to find all matches
+	public String linearSeachForValue(int value){
+		boolean valueInArray = false;
+		String indexsWithValue = "";
+		System.out.println("The value was found in the following:");
+		for(int i = 0; i<arraySize; i++){
+			if(theArray[i] == value){
+				valueInArray = true;
+				System.out.println(i + "");
+				indexsWithValue+= i + "";
+				
+			}
+		}
+		if(!valueInArray){
+			indexsWithValue = "None";
+			System.out.print(indexsWithValue);
+			
+		}
+		System.out.println();
+		return indexsWithValue;
+	}
+	
+	
+	
 public static void main(String[] args){
 	MultidimensionalArrays newArray = new MultidimensionalArrays();
 	newArray.generateRandomArray();
@@ -50,11 +80,13 @@ public static void main(String[] args){
 	System.out.println(newArray.doeasArrayContainThisValue(17));
 	newArray.deteIndex(2);
 	newArray.PrintArray();
+	newArray.insertValue(52);
+	newArray.linearSeachForValue(12);
 }
 
-@SuppressWarnings("unused")
-private void getValueAtIndex(int i) {
-	// TODO Auto-generated method stub
+//@SuppressWarnings("unused")
+//private void getValueAtIndex(int i) {
+//	// TODO Auto-generated method stub
 	
 }
-}
+
