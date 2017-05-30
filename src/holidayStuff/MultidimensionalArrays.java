@@ -33,12 +33,23 @@ public class MultidimensionalArrays {
 		}
 		return valueInArray;
 	}
+	
+	public void deteIndex(int index){
+		if(index < arraySize){
+			for(int i = index; i< (arraySize - 1); i++){
+				theArray[i]= theArray[i+1];
+			}
+			arraySize--;
+		}
+	}
 public static void main(String[] args){
 	MultidimensionalArrays newArray = new MultidimensionalArrays();
 	newArray.generateRandomArray();
 	newArray.PrintArray();
 	System.out.println(newArray.getValueIndex(0));
 	System.out.println(newArray.doeasArrayContainThisValue(17));
+	newArray.deteIndex(2);
+	newArray.PrintArray();
 }
 
 @SuppressWarnings("unused")
