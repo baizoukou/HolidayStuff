@@ -70,6 +70,48 @@ public class MultidimensionalArrays {
 		return indexsWithValue;
 	}
 	
+	//buble sort
+	public void bubbleSort(){
+		for(int i = arraySize - 1;i > 1; i--){
+			for (int j =0; j<i; j++){
+				if(theArray[j] > theArray[j+1]){
+					swapValues(j, j+1);
+					printHorzArray(i, j);
+				}
+				printHorzArray(i, j);
+			}
+		}
+	}
+	private void printHorzArray(int i, int j) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+	public void swapValues(int indexOne, int indexTwo){
+		int temp = theArray[indexOne];
+		theArray[indexOne] = theArray[indexTwo];
+		theArray[indexTwo] = temp;
+		
+	}
+	
+	// BinariSearch
+	
+	public void binarySearchForValue(int value){
+		int lowIndex = 0;
+		int highIndex = arraySize - 1;
+		 
+		while(lowIndex <= highIndex){
+			int middleIndex = (highIndex + lowIndex)/2;
+			if (theArray[middleIndex] < value) lowIndex = middleIndex +1;
+			else if (theArray[middleIndex] > value) highIndex = middleIndex - 1;
+			else {
+				System.out.println("\nFound a match for"+ value+" at Index" + middleIndex);
+				lowIndex = highIndex + 1;
+				
+			}
+			printHorzArray(middleIndex, -1);
+		}
+	}
 	
 	
 public static void main(String[] args){
@@ -82,6 +124,9 @@ public static void main(String[] args){
 	newArray.PrintArray();
 	newArray.insertValue(52);
 	newArray.linearSeachForValue(12);
+	newArray.bubbleSort();
+	newArray.binarySearchForValue(30);
+	
 }
 
 //@SuppressWarnings("unused")
