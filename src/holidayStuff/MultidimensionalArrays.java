@@ -24,12 +24,23 @@ public class MultidimensionalArrays {
 			if(index < arraySize) return theArray[index];
 			return 0;
 	}
+	public boolean doeasArrayContainThisValue(int searchValue){
+		boolean valueInArray = false;
+		for(int i = 0; i < arraySize; i++){
+			if (theArray[i] == searchValue){
+				valueInArray = true;
+			}
+		}
+		return valueInArray;
+	}
 public static void main(String[] args){
 	MultidimensionalArrays newArray = new MultidimensionalArrays();
 	newArray.generateRandomArray();
 	newArray.PrintArray();
 	System.out.println(newArray.getValueIndex(0));
+	System.out.println(newArray.doeasArrayContainThisValue(17));
 }
+
 @SuppressWarnings("unused")
 private void getValueAtIndex(int i) {
 	// TODO Auto-generated method stub
